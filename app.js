@@ -16,8 +16,10 @@ $(document).ready(function () {
             url: `https://api.giphy.com/v1/gifs/search?q=${userInput}&trending&limit=1&api_key=${api_key}`,
             dataType: "json",
         }).then(function (response) {
-            console.log(response);
+            console.log(response.data);
             // var randomNum = Math.floor(Math.random() * response.data.length);
+            // console.log(randomNum);
+            // $("body").append(`<img src= ${response.data[randomNum].images.original.url}/>`);
             for (var i = 0; i < response.data.length; i++) {
                 var still = response.data[i].images.original_still.url;
                 var gif = response.data[i].images.original.url;
